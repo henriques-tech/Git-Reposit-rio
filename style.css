@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e0e4eb, #d1d6e0, #bfc6d4);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #212631;
+    background: rgba(33, 38, 49, 0.9);
+    backdrop-filter: blur(6px);
+    max-width: 350px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    color: #fff;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-form {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+label {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    color: #999;
+    font-size: 13px;
+    line-height: normal;
+    transition: all .3s;
+    pointer-events: none;
+}
+
+input:focus {
+    border: 1px solid #007F0E;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 11px;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #212631;
+}
+
+.forgot-text {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-back {
+    background: #dbdbdb;
+}
+
+.btn-back:hover {
+    box-shadow: 0 4px 8px rgba(219, 219, 219, 0.8);
+}
+
+.btn-login {
+    background: #007F0E;
+    color: #fff;
+}
+
+.btn-login:hover {
+    box-shadow: 0 4px 8px rgba(0, 127, 14, 0.7);
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.horizontal-line {
+    flex: 1;
+    height: 1px;
+    background: #999;
+}
+
+.input-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon {
+    width: 40px;          /* área igual */
+    height: 40px;         /* área igual */
+    display: flex;        /* centralização */
+    justify-content: center;
+    align-items: center;
+    
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background-color: #212631;
+    font-size: 18px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.google:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.facebook:hover {
+    background: rgba(59, 89, 152, 0.2);
+}
+
+/* ----- TEMA CLARO AUTOMÁTICO ----- */
+@media (prefers-color-scheme: light) {
+    body {
+        background: linear-gradient(to right, #f5f6f9, #eceff4, #dee3ec);
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.85);
+        color: #000;
+    }
+
+    .title,
+    .forgot-text,
+    .lines {
+        color: #000;
+    }
+
+    .icon {
+        color: #000;
+        border-color: #000;
+        background: transparent;
+    }
+
+    .google:hover {
+        background: rgba(0, 0, 0, 0.08);
+    }
+
+    .facebook:hover {
+        background: rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* ----- RESPONSIVIDADE PARA TABLETS ----- */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        max-width: 450px;
+        padding: 30px;
+        border-radius: 16px;
+    }
+
+    input {
+        padding: 18px;
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+}
